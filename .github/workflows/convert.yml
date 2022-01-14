@@ -17,7 +17,7 @@ jobs:
 
       - name: Coverting
         run: |
-          cp -f /ZDK_IMEdictionary.txt /Google_IME.txt
-          iconv -f UTF-8 -t UTF-16 /ZDK_IMEdictionary.txt > /MS_IME.txt
-          sed s/短縮よみ/名詞/ /ZDK_IMEdictionary.txt | sed '1s/^/!!ATOK_TANGO_TEXT_HEADER_1\n/' | iconv -f UTF8 -t UTF16 > /ATOK.txt
+          cp -f ZDK_IMEdictionary.txt Google_IME.txt
+          iconv -f UTF-8 -t UTF-16 ZDK_IMEdictionary.txt > MS_IME.txt
+          sed s/短縮よみ/名詞/ ZDK_IMEdictionary.txt | sed '1s/^/!!ATOK_TANGO_TEXT_HEADER_1\n/' | iconv -f UTF8 -t UTF16 > ATOK.txt
           tr '\t' ',' < ZDK_IMEdictionary.txt  | tr -d '\n' > MacOS.txt
